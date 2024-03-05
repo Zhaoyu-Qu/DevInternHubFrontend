@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from './AuthContext';
 import { ErrorProvider } from './ErrorContext';
+import JobList from './components/JobList';
 
 function App() {
   const queryClient = new QueryClient();
@@ -25,7 +26,7 @@ function App() {
           <ErrorProvider>
             <AuthProvider>
               <QueryClientProvider client={queryClient}>
-                <></>
+                <JobList />
               </QueryClientProvider>
             </AuthProvider>
           </ErrorProvider>
