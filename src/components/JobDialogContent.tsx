@@ -43,7 +43,7 @@ function JobDialogContent({ job, handleChange, handleDateChange, handleTechnolog
                     sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Location" />
                 <TextField label="Company Name" name="companyName" value={job.companyName} onChange={handleChange}
                     sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Company Name" />
-                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker label="Opening Date" name="openingDate" onChange={(newValue) => handleDateChange("openingDate", newValue)}
                         value={job.openingDate ? dayjs(job.openingDate) : null}
                         sx={commonSx}
@@ -57,7 +57,7 @@ function JobDialogContent({ job, handleChange, handleDateChange, handleTechnolog
                         slotProps={{
                             textField: { InputLabelProps: { shrink: true } }
                         }} />
-                </LocalizationProvider> */}
+                </LocalizationProvider>
                 <TextField label="Specialisation" name="specialisation" value={job.specialisation} onChange={handleChange}
                     sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Frontend, Backend, etc." />
                 <FormControl sx={commonSx}>
