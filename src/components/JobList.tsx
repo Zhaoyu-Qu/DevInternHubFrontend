@@ -3,16 +3,15 @@ import { getJobs, deleteJob, getJobLink } from '../api/jobapi';
 import { DataGrid, GridCellParams, GridColDef, GridToolbar } from '@mui/x-data-grid'
 import Snackbar from "@mui/material/Snackbar";
 import { useAuth } from "../AuthContext";
-// import AddJob from "./AddJob";
+import AddJob from "./AddJob";
 import Login from "./Login";
 import { useEffect, useState } from "react";
-// import EditJob from "./EditJob";
+import EditJob from "./EditJob";
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { Tooltip } from '@mui/material';
 import { useError } from '../ErrorContext';
 import BookmarkJob from './BookmarkJob';
-import AddJob from './AddJob';
 
 function JobList() {
     const { errorMessage, setErrorMessage } = useError();
@@ -70,6 +69,26 @@ function JobList() {
         { field: 'type', headerName: 'Type', flex: 1 },
         { field: 'technologies', headerName: 'Tech Stack', width: 100 },
         { field: 'url', headerName: 'Url', width: 100 },
+        {
+            field: 'edit',
+            headerName: '',
+            width: 10,
+            sortable: false,
+            filterable: false,
+            disableColumnMenu: true,
+            renderCell: (params: GridCellParams) => {
+                const isOwned = params.row.isOwned && !params.row.isVerified;
+                const isAdmin = role === "ROLE_ADMIN";
+                const canEdit = isOwned || isAdmin;
+                return (
+                    canEdit ? (
+
+                        <EditJob jobdata={params.row} />
+
+                    ) : null
+                );
+            }
+        },
         {
             field: 'delete',
             headerName: '',

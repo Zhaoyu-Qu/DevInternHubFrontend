@@ -6,11 +6,10 @@ import { JobForCreation } from '../types';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { addJob } from '../api/jobapi';
 import Button from '@mui/material/Button';
-// import JobDialogContent from './JobDialogContent';
+import JobDialogContent from './JobDialogContent';
 import { useAuth } from '../AuthContext';
-import { Tooltip } from '@mui/material';
-// import { SelectChangeEvent } from '@mui/material';
-// import dayjs from 'dayjs';
+import { SelectChangeEvent, Tooltip } from '@mui/material';
+import dayjs from 'dayjs';
 import { useError } from '../ErrorContext';
 function AddJob() {
     const { setErrorMessage } = useError();
@@ -66,27 +65,27 @@ function AddJob() {
         setOpen(false);
     }
 
-    // const handleChange = (event: React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>) => {
-    //     setJob({ ...job, [event.target.name]: event.target.value });
-    // }
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>) => {
+        setJob({ ...job, [event.target.name]: event.target.value });
+    }
 
-    // const handleDateChange = (propertyName: string, newValue: dayjs.Dayjs | null) => {
-    //     const formattedDate = newValue ? newValue.format("YYYY-MM-DD") : '';
-    //     setJob({ ...job, [propertyName]: formattedDate });
-    // }
+    const handleDateChange = (propertyName: string, newValue: dayjs.Dayjs | null) => {
+        const formattedDate = newValue ? newValue.format("YYYY-MM-DD") : '';
+        setJob({ ...job, [propertyName]: formattedDate });
+    }
 
     const handleSave = () => {
         mutate(job);
         handleClose();
     }
 
-    // const handleTechnologiesChange = (chips: string[]) => {
-    //     setJob({ ...job, 'technologies': chips });
-    // }
+    const handleTechnologiesChange = (chips: string[]) => {
+        setJob({ ...job, 'technologies': chips });
+    }
 
-    // const handleTypeChange = (event: SelectChangeEvent<string>) => {
-    //     handleChange(event);
-    // }
+    const handleTypeChange = (event: SelectChangeEvent<string>) => {
+        handleChange(event);
+    }
     if (role === "ROLE_ADMIN" || role === "ROLE_USER") {
         return (
             <>
@@ -97,12 +96,12 @@ function AddJob() {
                     onClick={handleClickOpen}>New Posting</Button>
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>New Posting</DialogTitle>
-                    {/* <JobDialogContent
+                    <JobDialogContent
                         job={job}
                         handleChange={handleChange}
                         handleDateChange={handleDateChange}
                         handleTechnologiesChange={handleTechnologiesChange}
-                        handleTypeChange={handleTypeChange} /> */}
+                        handleTypeChange={handleTypeChange} />
                     <DialogActions>
                         <Button onClick={handleClose}>Cancel</Button>
                         <Button onClick={handleSave}>Save</Button>
