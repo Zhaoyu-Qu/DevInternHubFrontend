@@ -22,7 +22,7 @@ function App() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container component="main" sx={{ mt: 2, mb: 2, flex: 1 }}>
+        <Container component="main" sx={{ mt: 2, mb: 2, flex: 1, px: 1 }} maxWidth={false}>
           <ErrorProvider>
             <AuthProvider>
               <QueryClientProvider client={queryClient}>
