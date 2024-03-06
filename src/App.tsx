@@ -18,7 +18,7 @@ function App() {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6">
-              DevInternHub - a database for CS Students: Internships & Graduate Jobs Portal
+              DevInternHub - A database for CS Students: Internships & Graduate Jobs Portal
             </Typography>
           </Toolbar>
         </AppBar>
