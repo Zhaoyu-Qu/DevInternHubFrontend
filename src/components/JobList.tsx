@@ -60,15 +60,14 @@ function JobList() {
             }
         },
         { field: 'companyName', headerName: 'Company', flex: 1 },
-        { field: 'title', headerName: 'Title', flex: 1 },
-        { field: 'description', headerName: 'Description', flex: 1 },
+        { field: 'title', headerName: 'Title', flex: 3 },
         { field: 'openingDate', headerName: 'Opening Date', flex: 1 },
         { field: 'closingDate', headerName: 'Closing Date', flex: 1 },
         { field: 'location', headerName: 'Location', flex: 1 },
         { field: 'specialisation', headerName: 'Specialisation', flex: 1 },
         { field: 'type', headerName: 'Type', flex: 1 },
-        { field: 'technologies', headerName: 'Tech Stack', width: 100 },
-        { field: 'url', headerName: 'Url', width: 100 },
+        { field: 'technologies', headerName: 'Tech Stack', flex: 1 },
+        { field: 'url', headerName: 'Url', flex: 1 },
         {
             field: 'edit',
             headerName: '',

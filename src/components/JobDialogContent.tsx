@@ -35,8 +35,8 @@ function JobDialogContent({ job, handleChange, handleDateChange, handleTechnolog
             <Stack spacing={3} mt={1}>
                 <TextField label="Title" name="title" value={job.title} onChange={handleChange}
                     sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Title" />
-                <TextField label="Description" name="description" value={job.description} onChange={handleChange}
-                    sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Job Description" />
+                {/* <TextField label="Description" name="description" value={job.description} onChange={handleChange}
+                    sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Job Description" /> */}
                 <TextField label="Url (required)" name="url" value={job.url} onChange={handleChange}
                     sx={commonSx} InputLabelProps={commonInputLabelProps} placeholder="Url" />
                 <TextField label="Location" name="location" value={job.location} onChange={handleChange}
