@@ -67,7 +67,23 @@ function JobList() {
         { field: 'specialisation', headerName: 'Specialisation', flex: 1 },
         { field: 'type', headerName: 'Type', flex: 1 },
         { field: 'technologies', headerName: 'Tech Stack', flex: 1 },
-        { field: 'url', headerName: 'Url', flex: 1 },
+        {
+            field: 'url',
+            headerName: 'Url',
+            flex: 1,
+            renderCell: (params: GridCellParams) => {
+                let url = params.row.url;
+                if (!/^https?:\/\//i.test(url)) {
+                    url = 'http://' + url; // Prepend http:// if missing
+                }
+                return (
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                        {params.row.url}
+                    </a>
+                );
+            }
+        },
+        
         {
             field: 'edit',
             headerName: '',
