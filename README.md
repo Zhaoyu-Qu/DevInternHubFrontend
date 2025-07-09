@@ -1,5 +1,7 @@
-This is the frontend source code for www.DevInternHub.com
+## Overview
+This repository contains the source code for the frontend application of the website [](www.DevInternHub.space).
 
-To run the code, clone the repository and execute 'npm install && npm run dev'.
+To run the code, clone the repository and execute:
+`npm install && npm run dev`
 
-You will need to have Node.js installed first.
+Make sure you have Node.js installed beforehand.
